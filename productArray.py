@@ -51,7 +51,7 @@ def minSpaceSol(l):
     for i in range(len(l)-1, -1, -1):
         arr[i] *= temp
         temp *= l[i]
-
+d
     return arr
 
 
