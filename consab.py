@@ -7,15 +7,11 @@ def cons(a, b):
 
 
 def car(f):
-    def left(a, b):
-        return a
-    return f(left)
+    return f(lambda x, y: x)
 
 
 def cdr(f):
-    def right(a, b):
-        return b
-    return f(right)
+    return f(lambda x, y: y)
 
 
 def main():
