@@ -15,7 +15,6 @@ def cdr(f):
 
 
 def main():
-    print(cons(2, 3))
     print(car(cons(2, 3)))
     print(cdr(cons(2, 3)))
 
