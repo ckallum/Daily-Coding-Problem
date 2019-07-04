@@ -19,12 +19,24 @@ def decodeCount(num):
 
 
 def dpDecodeCount(num):
-    pass
+    parseDict = dict()
+    parseDict[num[0]] = 1
+    for i in range(1, len(num)):
+        if i > 1:
+            if decode(num[-2:]) == 0:
+                parseDict[num[:i + 1]] = parseDict[num[:i]]
+            else:
+                parseDict[num[:i + 1]] = parseDict[num[:i - 1]] + parseDict[num[:i]]
+        else:
+            parseDict[num[:i + 1]] = decode(num[:i+1]) + 1
+
+    return parseDict[num]
 
 
 def main():
-    inp = '1212'
+    inp = '1222122111221213'
     print(decodeCount(inp))
+    print(dpDecodeCount(inp))
 
 
 if __name__ == '__main__':
