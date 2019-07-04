@@ -23,7 +23,7 @@ def dpDecodeCount(num):
     parseDict[num[0]] = 1
     for i in range(1, len(num)):
         if i > 1:
-            if decode(num[-2:]) == 0:
+            if decode(num[i-1:i+1]) == 0:
                 parseDict[num[:i + 1]] = parseDict[num[:i]]
             else:
                 parseDict[num[:i + 1]] = parseDict[num[:i - 1]] + parseDict[num[:i]]
@@ -34,7 +34,7 @@ def dpDecodeCount(num):
 
 
 def main():
-    inp = '1222122111221213'
+    inp = '12221221344511221213'
     print(decodeCount(inp))
     print(dpDecodeCount(inp))
 
