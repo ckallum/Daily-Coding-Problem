@@ -1,5 +1,9 @@
 from collections import defaultdict
 
+
+# String traversal using Trie
+
+
 def prefixFuncShort(l, pre):
     return list(filter(lambda x: x[:len(pre)] == pre, l))
 
@@ -34,7 +38,6 @@ def findSuf(node):
     return s
 
 
-
 def search(node, pre):
     current = node
     resultStrings = list()
@@ -46,9 +49,8 @@ def search(node, pre):
     suffix = findSuf(current)
 
     for suf in suffix:
-        resultStrings.append(pre[:-1]+str(suf))
+        resultStrings.append(pre[:-1] + str(suf))
     return resultStrings
-
 
 
 def prefixFuncTrie(l, pre):
@@ -57,7 +59,6 @@ def prefixFuncTrie(l, pre):
         add(t, word)
     result = search(t, pre)
     return result
-
 
 
 def main():

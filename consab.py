@@ -1,4 +1,5 @@
-from collections import deque
+# Understanding python
+
 
 def cons(a, b):
     def pair(f):

@@ -1,3 +1,6 @@
+# List traversal brain teaser
+
+
 from functools import reduce
 
 
@@ -26,7 +29,6 @@ def noDivideSolution(l):
 
     out = []
     for x in range(len(l)):
-        num = None
         if x == 0:
             num = fromRight[x+1]
         elif x == len(l)-1:
@@ -51,7 +53,7 @@ def minSpaceSol(l):
     for i in range(len(l)-1, -1, -1):
         arr[i] *= temp
         temp *= l[i]
-d
+
     return arr
 
 

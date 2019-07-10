@@ -1,3 +1,6 @@
+# List traversal problem solving
+
+
 def findMax(l):
     maxCount = l[0]
     prevMaxCount = 0

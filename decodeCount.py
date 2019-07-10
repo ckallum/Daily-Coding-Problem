@@ -1,10 +1,13 @@
+# Dynamic programming string traversal -> Fibonacci ish
+
+
 def decode(num):
     if 0 < int(num) <= 26:
         return 1
     else:
         return 0
 
-
+# Recursive Method
 def decodeCount(num):
     if len(num) == 1:
         return 1
@@ -17,7 +20,7 @@ def decodeCount(num):
 
     return count
 
-
+# Dynamic Programming method bottom up
 def dpDecodeCount(num):
     parseDict = dict()
     parseDict[num[0]] = 1

@@ -1,3 +1,6 @@
+# Tree traversal, depth first to get totals of child subtrees, then make comparisons with children to get total value at current root
+
+
 class Node:
     def __init__(self, val):
         self.data = val

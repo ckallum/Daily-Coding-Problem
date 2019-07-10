@@ -1,9 +1,12 @@
+# List traversal/search ->  improved by using a hashTable for searching instead of list
+
+
 def findMissingBrute(l):
     if len(l) == 0:
         return 1
     nextInt = 1
     found = False
-    while not(found):
+    while not found:
         if nextInt in l:
             nextInt += 1
         else:

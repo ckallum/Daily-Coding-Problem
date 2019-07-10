@@ -1,4 +1,8 @@
+# Tree traversal, problem solving with deserialising a string into relevant search
+
+
 from collections import deque
+
 
 class Node:
     def __init__(self, val, left=None, right=None):
@@ -6,10 +10,11 @@ class Node:
         self.left = left
         self.right = right
 
+
 def serialise(node):
-    if node == None:
-        return 'None'+'-'
-    serialised = node.val+'-'+serialise(node.left)+serialise(node.right)
+    if not Node:
+        return 'None' + '-'
+    serialised = node.val + '-' + serialise(node.left) + serialise(node.right)
     return serialised
 
 
@@ -19,6 +24,7 @@ def deserialise(string):
     deserialised = deserialisedNode(deque(nodes), 'root')
 
     return deserialised
+
 
 def deserialisedNode(q, find):
     print(q)
@@ -34,7 +40,7 @@ def deserialisedNode(q, find):
 
 
 def main():
-    node = Node('root', Node('left',Node('left.left')), Node('right'))
+    node = Node('root', Node('left', Node('left.left')), Node('right'))
     print(serialise(node))
     n = deserialise(serialise(node))
     assert deserialise(serialise(node)).left.left.val == 'left.left'

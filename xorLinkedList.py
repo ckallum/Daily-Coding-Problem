@@ -1,8 +1,9 @@
-
+# Linked list traversal and pointer (de)referencing in python-> basic problem solving and walking through steps.
 class Node:
     def __init__(self, value):
         self.data = value
         self.both = id(value)
+
 
 a = Node('a')
 b = Node('b')
@@ -18,6 +19,7 @@ addressMap[id("c")] = c
 addressMap[id("d")] = d
 addressMap[id("e")] = e
 addressMap[id("f")] = f
+
 
 class xorList:
     def __init__(self, node):
@@ -50,7 +52,6 @@ def main():
     assert l.get(1) == 'b'
     assert l.get(2) == 'c'
     assert l.get(3) == 'd'
-
 
 
 if __name__ == '__main__':
