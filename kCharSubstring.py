@@ -1,4 +1,4 @@
-# Maxima window problem
+# Maxima window problem -> solution help from GeekForGeeks
 
 from string import ascii_lowercase
 
