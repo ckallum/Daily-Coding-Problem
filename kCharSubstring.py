@@ -1,5 +1,5 @@
-# Maxima window problem -> solution help from GeekForGeeks
-
+# Maxima window problem, substring problem over string traversal(if a new distinct value is added current substring must subtract from first character(rule of substring) -> solution help from GeekForGeeks
+# Traverses over all substrings through one loop, stores a max size and only replaces the size and temp substring start index if temp substring > current max
 from string import ascii_lowercase
 
 
