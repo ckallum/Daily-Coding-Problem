@@ -1,3 +1,5 @@
+# Easy Window problem
+
 class Log(object):
     def __init__(self, size):
         self.log = list()
@@ -9,7 +11,7 @@ class Log(object):
     def record(self, order_id):
         self.log.append(order_id)
         if len(self.log) > self.size:
-            self.log = self.log[1:]
+            self.log.pop(0)
 
     def getLast(self, i):
         return self.log[-i]
