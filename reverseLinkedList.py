@@ -20,7 +20,7 @@ class ListNode(object):
             return head
         newNode = self.recursiveReverseList(head.next)
         newNode.next = head
-        self.next = None
+        head.next = None
         return head
 
     def iterativeReverseList(self, head):
