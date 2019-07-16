@@ -7,6 +7,7 @@ def decode(num):
     else:
         return 0
 
+
 # Recursive Method
 def decodeCount(num):
     if len(num) == 1:
@@ -20,18 +21,19 @@ def decodeCount(num):
 
     return count
 
+
 # Dynamic Programming method bottom up
 def dpDecodeCount(num):
     parseDict = dict()
     parseDict[num[0]] = 1
     for i in range(1, len(num)):
         if i > 1:
-            if decode(num[i-1:i+1]) == 0:
+            if decode(num[i - 1:i + 1]) == 0:
                 parseDict[num[:i + 1]] = parseDict[num[:i]]
             else:
                 parseDict[num[:i + 1]] = parseDict[num[:i - 1]] + parseDict[num[:i]]
         else:
-            parseDict[num[:i + 1]] = decode(num[:i+1]) + 1
+            parseDict[num[:i + 1]] = decode(num[:i + 1]) + 1
 
     return parseDict[num]
 
