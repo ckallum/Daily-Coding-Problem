@@ -1,4 +1,4 @@
-# String iteration and matching with recursive call on substrings
+# String iteration/parsing and matching with recursive call on substrings
 
 def evaluate(regex, string):
     # if no pattern and no text, return True
