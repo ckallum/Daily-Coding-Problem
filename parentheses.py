@@ -1,25 +1,27 @@
 from collections import deque
 
 
-def parentheses(s):
-    leftDict = ['{', '[', '(']
-    rightDict = ['}', ']', ')']
-    parStack = deque()
-    if len(s) % 2 != 0:
+def evaluate(parentheses):
+    lst = list(parentheses)
+    stack = deque()
+    leftDict = ['[', '(', '{']
+    rightDict = [']', ')', '}']
+    for p in lst:
+        if p in leftDict:
+            stack.append(p)
+        else:
+            index = rightDict.index(p)
+            if not stack or index != leftDict.index(stack.pop()):
+                return False
+    if stack:
         return False
-    for x in s:
-        print(parStack)
-        if x in leftDict:
-            parStack.append(x)
-        elif x != rightDict[leftDict.index(parStack.pop())]:
-            return False
     return True
 
 
 def main():
-    assert parentheses("((()))") == True
-    assert parentheses("[()]{}") == True
-    assert parentheses("({[)]") == False
+    assert evaluate("([])[]({})") == True
+    assert evaluate("([)]") == False
+    assert evaluate("((()") == False
 
 
 if __name__ == '__main__':
