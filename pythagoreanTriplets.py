@@ -1,4 +1,5 @@
-# Iterating over array to match values to condition->consider sorting first in these type of problems/reducing elements
+# Iterating over array to match values to condition->consider sorting first in these type of problems/reducing element
+# Common middle algorithm
 
 def findPythagoreanTriplets(nums):
     for index, val in enumerate(nums):
