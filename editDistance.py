@@ -10,6 +10,7 @@ def distance(s1, s2):
                 matrix[i][j] = matrix[i - 1][j - 1]
             else:
                 matrix[i][j] = 1 + min(matrix[i][j - 1], matrix[i - 1][j], matrix[i - 1][j - 1])
+    print(matrix)
     return matrix[len(s1)][len(s2)]
 
 
@@ -21,3 +22,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
