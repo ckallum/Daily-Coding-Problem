@@ -42,6 +42,5 @@ def main():
     insert(root, 25)
     assert find(root).value == 45
 
-
 if __name__ == '__main__':
     main()
