@@ -1,25 +1,25 @@
 # Backtracking, if it's valid we carry going down branch following that move, else we prune the branch and try another move
+# each index of the board is a new row, the number of the queen appended is the column in the row.
 
 
 def nQueens(n, board=[]):
-    if n == len(board):
+    if n == len(board):  # All rows are filled by a queen
         return 1
     count = 0
     for i in range(n):
         board.append(i)
-        if isVal(board):
+        if valid(board):
             count += nQueens(n, board)
         board.pop()
     return count
 
 
-def isVal(board):
-    row = len(board) - 1
-    col = board[-1]
-
-    for i, j in enumerate(board[:-1]):
-        d = abs(col - j)
-        if d == 0 or d == row - i:
+def valid(board):
+    rows = len(board) - 1  # Current number of rows being occupied
+    col = board[-1]  # Column of last queen put down ->if it was put down that column must be valid
+    for row, column in enumerate(board[:-1]): # Don't count last element as that's the element we are examining
+        diff = abs(col - column)
+        if diff == 0 or diff == rows - row:
             return False
     return True
 

@@ -1,53 +1,47 @@
-class ListNode(object):
-    def __init__(self, val):
-        self.val = val
+class Node(object):
+    def __init__(self, value):
         self.next = None
-
-    def __repr__(self):
-        return "Node value = {}, next node = {}".format(self.val, self.next)
+        self.value = value
 
 
-def remove(head, k):
-    temp = ListNode(None)
-    temp.next = head
-    lookahead = temp
+def removeLookahead(head, k):
+    headPointer = Node(None)
+    headPointer.next = head
+    lookahead = headPointer
     for _ in range(k):
         lookahead = lookahead.next
-    removedItem = head
-    prev = temp
+    node = headPointer
     while lookahead:
         lookahead = lookahead.next
         if lookahead:
-            prev = removedItem
-            removedItem = removedItem.next
-    prev.next = removedItem.next
+            node = node.next
+        else:
+            node.next = node.next.next
+    return headPointer.next
 
-    return temp.next
 
-
-def createLinkedList(l):
-    head = ListNode(l[0])
-    node = head
-    for x in l[1:]:
-        n = ListNode(x)
-        node.next = n
-        node = n
+def convertToLL(nums):
+    head = Node(nums[0])
+    current = head
+    for num in nums[1:]:
+        next = Node(num)
+        current.next = next
+        current = current.next
     return head
 
 
 def convertToList(head):
-    lst = []
-    while head:
-        lst.append(head.val)
-        head = head.next
-    return lst
+    ret = list()
+    node = head
+    while node:
+        ret.append(node.value)
+        node = node.next
+    return ret
 
 
 def main():
-    head = createLinkedList([0, 1, 2, 3, 4, 5])
-    assert convertToList(remove(head, 6)) == [1, 2, 3, 4, 5]
-    h = createLinkedList([0, 1, 2, 3, 4, 5])
-    assert convertToList(remove(h, 2)) == [0, 1, 2, 3, 5]
+    assert convertToList(removeLookahead(convertToLL([0, 1, 2, 3, 4]), 2)) == [0, 1, 2, 4]
+    assert convertToList(removeLookahead(convertToLL([0, 1, 2, 3, 4]), 5)) == [1, 2, 3, 4]
 
 
 if __name__ == '__main__':
