@@ -2,13 +2,20 @@ from random import randint
 
 
 def evolve(board):
+    newBoard = initialise()
+
     for row, val in enumerate(board):
         for col, val2 in enumerate(val):
             count = getNeighbours((col, row), board)
-            if board[row][col] and (count > 3 or count < 2):
-                board[row][col] = False
-            elif not board[row][col] and count == 3:
-                board[row][col] = True
+            if board[row][col]:
+                if count > 3 or count < 2:
+                    newBoard[row][col] = False
+                else:
+                    newBoard[row][col] = True
+            else:
+                if count == 3:
+                    newBoard[row][col] = True
+    return newBoard
 
 
 def initialise(alive=[]):
@@ -16,19 +23,15 @@ def initialise(alive=[]):
     if alive:
         for col, row in alive:
             try:
-                board[col][row] = True
+                board[row][col] = True
             except:
                 pass
-    else:
-        for _ in range(5):
-            x, y = randint(0, 49), randint(0, 49)
-            board[x][y] = True
     return board
 
 
-def printAliveCoords(board):
+def getAliveCoords(board):
     alive = [(x, y) for x in range(len(board[0])) for y in range(len(board)) if board[y][x]]
-    print(alive)
+    return alive
 
 
 def getNeighbours(coordinate, board):
@@ -43,14 +46,16 @@ def getNeighbours(coordinate, board):
                 count += 1
         except:
             pass
+    if board[y][x]:
+        print(count, (x, y))
     return count
 
 
 def main():
-    board = initialise([(1, 1), (1, 2),(2, 1),(2, 3),(2, 1)])
+    board = initialise([(0, 10), (0, 1), (1, 0), (1, 1), (4, 4)])
     for _ in range(1000):
-        printAliveCoords(board)
-        evolve(board)
+        print(getAliveCoords(board))
+        board = evolve(board)
 
 
 if __name__ == '__main__':
