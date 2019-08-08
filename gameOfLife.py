@@ -1,4 +1,4 @@
-from random import randint
+
 
 
 def evolve(board):
