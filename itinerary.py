@@ -21,7 +21,9 @@ def flightItinerary(tickets, itinerary, start):
 def main():
     trips = [('HNL', 'AKL'), ('YUL', 'ORD'), ('ORD', 'SFO'), ('SFO', 'HNL'), ('AKL', 'YUL')]
     assert flightItinerary(trips, [], 'YUL') == ['YUL', 'ORD', 'SFO', 'HNL', 'AKL']
+    assert flightItinerary([('A', 'B'), ('A', 'C'), ('B', 'C'), ('C', 'A')], [], 'A') == ['A', 'B', 'C', 'A', 'C']
 
 
 if __name__ == '__main__':
     main()
+
