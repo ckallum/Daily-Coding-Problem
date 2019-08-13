@@ -41,13 +41,14 @@ def merge_intervals(intervals):
                 resIndex += 1
             index += 1
         if not popped:
-            result.insert(resIndex, (start,end))
+            result.insert(resIndex, (start, end))
         print(result)
     return result
 
 
 def main():
     assert merge_intervals([(1, 3), (5, 8), (6, 9), (4, 10), (20, 25)]) == [(1, 3), (4, 10), (20, 25)]
+    assert merge_intervals([(1, 3), (5, 8), (4, 10), (6, 9), (20, 25)]) == [(1, 3), (4, 10), (20, 25)]
 
 
 if __name__ == '__main__':
