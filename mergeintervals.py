@@ -18,3 +18,37 @@ print merge([(1, 3), (5, 8), (4, 10), (20, 25)])
 # [(1, 3), (4, 10), (20, 25)]
 
 """
+from math import inf
+
+
+def merge_intervals(intervals):
+    result = list()
+    result.append(intervals[0])
+    for start, end in intervals[1:]:
+        index = 0
+        resIndex = 1
+        popped = False
+        while index < len(result) and result:
+            min, max = result[index]
+            if start < min and end > max:
+                result.pop(index)
+                index -= 1
+            elif start > min and end < max:
+                popped = True
+            elif end < max:
+                resIndex -= 1
+            else:
+                resIndex += 1
+            index += 1
+        if not popped:
+            result.insert(resIndex, (start,end))
+        print(result)
+    return result
+
+
+def main():
+    assert merge_intervals([(1, 3), (5, 8), (6, 9), (4, 10), (20, 25)]) == [(1, 3), (4, 10), (20, 25)]
+
+
+if __name__ == '__main__':
+    main()
