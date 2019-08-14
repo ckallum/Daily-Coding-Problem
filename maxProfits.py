@@ -1,21 +1,24 @@
 from math import inf
 
 
-def maxProfits(prices):
+def maxProfits(prices):  # Each time their is a lower buy in price, we shift the window to see if there is better profit
+                         #  window after that time.
     maxprof = -inf
-    left = 0
+    buy = 0
+    sell = 0
     for index, price in enumerate(prices):
-        if price - prices[left] > maxprof:
-            maxprof = price - prices[left]
-        elif price < prices[left]:
-            left = index
+        if price - prices[buy] > maxprof:
+            maxprof = price - prices[buy]
+            sell = index
+        elif price < prices[buy]:
+            buy = index
 
-    return maxprof
+    return "Buy at: " + str(prices[buy]) + ", Sell at: " + str(prices[sell])
 
 
 def main():
     prices = [9, 11, 8, 12, 5, 7, 10]
-    assert maxProfits(prices) == 5
+    assert maxProfits(prices) == "Buy at: 5, Sell at: 10"
 
 
 if __name__ == '__main__':
