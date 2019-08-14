@@ -1,8 +1,8 @@
 from math import inf
 
 
-def maxProfits(prices):  # Each time their is a new low buy in price, we shift the window to see if there is better
-                         # profit window after that time.
+def maxProfits(prices):  # Each time their is a new low buy in price, we shift the buy in point to see if there is
+                         # better buy, sell window after that time.
     maxprof = -inf
     buy = 0
     sell = 0
