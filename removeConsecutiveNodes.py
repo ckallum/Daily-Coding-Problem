@@ -38,7 +38,7 @@ def removeConsecutiveSumTo0(node):
 
 def main():
     node = Node(10)
-    node.next = Node(-10)
+    node.next = Node(5)
     node.next.next = Node(-3)
     node.next.next.next = Node(-3)
     node.next.next.next.next = Node(1)
