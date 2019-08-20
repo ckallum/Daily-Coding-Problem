@@ -15,21 +15,23 @@ def insert(node, key):
     return node
 
 
-def find(node):
-    if not node:
-        return None
-    if node.right:
-        if node.right.right:
-            return find(node.right)
-        elif node.right.left:
-            return find(node.right.left)
-        else:
-            return node
-    elif node.left:
-        return find(node.left)
-    else:
-        return node
+def findlargest(node):
+    current = node
+    while current:
+        if not current.right:
+            return current
+        current = current.right
 
+def find(node):
+    if not node or (not node.left and not node.right):
+        return False
+    current = node
+    while current:
+        if current.right and not current.right.left and not current.right.right:
+            return current
+        elif not current.right and current.left:
+            return findlargest(current.left)
+        current = current.right
 
 def main():
     root = None
@@ -41,6 +43,7 @@ def main():
     insert(root, 15)
     insert(root, 25)
     assert find(root).value == 45
+
 
 if __name__ == '__main__':
     main()
