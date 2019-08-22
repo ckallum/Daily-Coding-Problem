@@ -25,13 +25,15 @@ def windowSlidingMax(arr, subSize):
     res = list()
     dq = deque()
 
-    for i in range(subSize):
+    for i in range(subSize): # Finding the max index in the first 3 values of the array
         while dq and arr[i] > arr[dq[-1]]:
             dq.pop()
         dq.append(i)
     res.append(arr[dq[0]])
 
     for i in range(subSize, len(arr)):
+        # Checking the index of the max value is within subarray scope
+        # If not, pop and start comparing a new window.
         while dq and dq[0] <= i - subSize:
             dq.popleft()
 
