@@ -63,8 +63,8 @@ def prefixFuncTrie(l, pre):
 
 def main():
     l = ['dog', 'deer', 'deal', 'd']
-    print(prefixFuncShort(l, 'de'))
-    print(prefixFuncTrie(l, 'de'))
+    assert prefixFuncShort(l, 'de') == ["deer", 'deal']
+    assert prefixFuncTrie(l, "de") == ["deer", 'deal']
 
 
 if __name__ == '__main__':

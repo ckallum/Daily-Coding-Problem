@@ -59,8 +59,8 @@ def duplicates(arr):
 
 
 def complete(board):
-    for row in range(1, 10):
-        for col in range(1, 10):
+    for row in range(9):
+        for col in range(9):
             if board[row][col] == 0:
                 return False
     return True

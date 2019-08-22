@@ -6,7 +6,7 @@ def nQueens(n, board=[]):
     if n == len(board):  # All rows are filled by a queen
         return 1
     count = 0
-    for i in range(n):
+    for i in range(n): # Trying each move and seeing how many lead to correct boards
         board.append(i)
         if valid(board):
             count += nQueens(n, board)
@@ -17,9 +17,9 @@ def nQueens(n, board=[]):
 def valid(board):
     rows = len(board) - 1  # Current number of rows being occupied
     col = board[-1]  # Column of last queen put down ->if it was put down that column must be valid
-    for row, column in enumerate(board[:-1]): # Don't count last element as that's the element we are examining
+    for row, column in enumerate(board[:-1]):  # Don't count last element as that's the element we are examining
         diff = abs(col - column)
-        if diff == 0 or diff == rows - row:
+        if diff == 0 or diff == rows - row:  # If the column is the same or it's on the diagonal(trigonometry)
             return False
     return True
 

@@ -1,3 +1,6 @@
+# Dynamic programming bottom up list traversal
+
+
 def findComplement(nums, k):
     compList = {}
     for x in nums:
@@ -10,8 +13,9 @@ def findComplement(nums, k):
 
 def main():
     l = [1, 1, 2, 3, 4, 5, 5, 0, 7, 8, 9]
-    k = int(input('Enter a number: '))
-    print('The result is', findComplement(l, k))
+    assert findComplement(l, 6) == True
+    assert findComplement(l, 15) == True
+    assert findComplement(l, 20) == False
 
 
 if __name__ == "__main__":
