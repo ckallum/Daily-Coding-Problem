@@ -46,7 +46,7 @@ def solution(s, k):
 
 def main():
     y, x = solution("abcbbbadadadadada", 3)
-    print('Result:', x, 'Length:', y)
+    assert x == "bbbadadadadada"
 
 
 if __name__ == '__main__':

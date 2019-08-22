@@ -16,8 +16,8 @@ def cdr(f):
 
 
 def main():
-    print(car(cons(2, 3)))
-    print(cdr(cons(2, 3)))
+    assert (car(cons(2, 3))) == 2
+    assert (cdr(cons(2, 3))) == 3
 
 
 if __name__ == '__main__':

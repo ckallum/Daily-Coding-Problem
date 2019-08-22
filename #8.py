@@ -20,8 +20,6 @@ def getUnivalCount(root):
     else:
         return 1
 
-    return total
-
 
 def main():
     root = Node(0)

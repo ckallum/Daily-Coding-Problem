@@ -40,8 +40,8 @@ def dpDecodeCount(num):
 
 def main():
     inp = '12221221344511221213'
-    print(decodeCount(inp))
-    print(dpDecodeCount(inp))
+    assert decodeCount(inp) == 1870
+    assert dpDecodeCount(inp) == 1870
 
 
 if __name__ == '__main__':

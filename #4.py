@@ -17,7 +17,7 @@ def findMissingBrute(l):
 
 def main():
     nums = [3, 4, -1, 1, 0, 3, 4, 6, 7, 8, 3, 2, 10]
-    print(findMissingBrute(nums))
+    assert findMissingBrute(nums) == 5
 
 
 if __name__ == '__main__':

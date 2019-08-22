@@ -59,12 +59,9 @@ def minSpaceSol(l):
 
 def main():
     ls = [2, 3, 4, 1, 3, 4, 6, 7]
-    ret = solution(ls)
-    r = noDivideSolution(ls)
-    eff = minSpaceSol(ls)
-    print(ret)
-    print(r)
-    print(eff)
+    assert solution(ls) == [6048, 4032, 3024, 12096, 4032, 3024, 2016, 1728]
+    assert noDivideSolution(ls) == [6048, 4032, 3024, 12096, 4032, 3024, 2016, 1728]
+    assert minSpaceSol(ls) == [6048, 4032, 3024, 12096, 4032, 3024, 2016, 1728]
 
 
 if __name__ == '__main__':

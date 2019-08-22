@@ -13,18 +13,15 @@ def findMax(l):
     return maxCount
 
 
-# [-3, -1, 4]
-
-
 def main():
     l1 = [2, 4, 6, 2, 5]  # 13
     l2 = [5, 1, 1, 5]  # 10
     l3 = [5, -3, 2, 6, -1, -4]  # 11
     l4 = [-5, -3, -2, -6, -1, -4]
-    print(findMax(l1))
-    print(findMax(l2))
-    print(findMax(l3))
-    print(findMax(l4))
+    assert findMax(l1) == 13
+    assert findMax(l2) == 10
+    assert findMax(l3) == 11
+    assert findMax(l4) == -1
 
 
 if __name__ == '__main__':
