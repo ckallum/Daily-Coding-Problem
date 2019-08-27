@@ -4,6 +4,12 @@
                numbers in the number array.
               i.e. 0'th row is initialised as true as we don't need any values from
               the array to achieve a sum of 0
+              -> It also lets us set row i as true if a value in the array
+                is equal to i as the value of the difference (row - value)
+                will equal 0 which is initialised in the
+                matrix as true and thus that row will  also be true which is
+                correct as we can obtain the value of row i by using a subset of
+                a single number equalling to the value of row i.
 
          col: (Each column index represents the j'th value used in the number array
                 where 0 means no values used and 1 means the first value etc.
