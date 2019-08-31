@@ -4,10 +4,10 @@ def word_search(grid, word):
     for row in range(len(grid)):
         for col in range(len(grid[0])):
             if grid[row][col] == word[0]:
-                if len(grid)-row >= len(word):
+                if len(grid) - row >= len(word):
                     found_in_col = find_in_col(grid, row, col, word)
                 if len(grid[0]) - col >= len(word):
-                    found_in_row = find_in_row(grid,row,col,word)
+                    found_in_row = find_in_row(grid, row, col, word)
             if found_in_col or found_in_row:
                 return True
     return False
