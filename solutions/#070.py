@@ -1,9 +1,9 @@
+from functools import reduce
+
+
 def find_perfect_number(n):
-    n = list(str(n))
-    remaining = 10
-    for number in n:
-        remaining -= int(number)
-    return int(str("".join(n)) + str(remaining))
+    remaining = 10-int(reduce(lambda x, y: int(x)+int(y), list(str(n))))
+    return int(str(n) + str(remaining))
 
 
 def main():
