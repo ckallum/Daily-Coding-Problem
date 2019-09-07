@@ -13,7 +13,7 @@ have uniform probability of happening.
 
 As each new test is independent of each other, we can just treat every experiment as a new one as they are 
 unconditional of each other. This means we can continuously retry the experiment by calling it recursively if the 
-result is outside the range 1-21 where each result between 1-21 has uniform probability of occurring.
+result is outside the range 1-5 where each result between 1-5 has uniform probability of occurring.
 """
 
 
