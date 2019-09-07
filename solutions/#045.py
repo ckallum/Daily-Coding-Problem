@@ -16,7 +16,7 @@ rand5(): result has 1/5 chance
 5*rand5() + rand5() = 1/5*1/5 = 1/25 chance for each result. 
 -5: brings result in range where the result is guaranteed to be between 1 - 25
 
-if the result is larger than 22 we disregard it and roll again, this doesn't effect
+if the result is larger than 22 we disregard it and roll again by calling it recursively, this doesn't effect
 the probability as each experiment is unconditional on each other so each new experiment
 is treated as the first one.
 
