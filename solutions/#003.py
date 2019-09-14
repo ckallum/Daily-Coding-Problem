@@ -12,7 +12,7 @@ class Node:
 
 
 def serialise(node):
-    if not Node:
+    if not node:
         return 'None' + '-'
     serialised = node.val + '-' + serialise(node.left) + serialise(node.right)
     return serialised
@@ -29,14 +29,13 @@ def deserialise(string):
 def deserialisedNode(q, find):
     print(q)
     if q:
-        nextNode = q.popleft()
-        if nextNode == 'None':
-            return
+        next_node = q.popleft()
+        if next_node == 'None':
+            return None
         else:
-            if find in deque(nextNode.split('.')):
-                node = Node(nextNode, deserialisedNode(q, 'left'), deserialisedNode(q, 'right'))
-
-    return node
+            if find in deque(next_node.split('.')):
+                return Node(next_node, deserialisedNode(q, 'left'), deserialisedNode(q, 'right'))
+    return None
 
 
 def main():
