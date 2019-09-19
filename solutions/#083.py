@@ -13,6 +13,8 @@ class Node(object):
         return result
 
 
+# DFS -> look at how it should behave on last level/leaves and how the second last level processes the result of the
+# leaves.
 def invert_bst(root):
     if not root:
         return None
