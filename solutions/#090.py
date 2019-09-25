@@ -12,10 +12,11 @@ def get_random_value(n, numbers):
 def main():
     iterations = 10000
     predictions_dict = {}
-    numbers = [1, 4, 8, 8, 3, 4, 5, 7, 8, 3, 5, 6, 7, 10, 29, 3, 4, 5, 39]
-    expected = round(1/30, 2)
+    n = 40
+    numbers = [1, 4, 8, 5, 7, 6, 10, 29, 39]
+    expected = round(1/(n-len(numbers)), 2)
     for _ in range(iterations):
-        result = get_random_value(40, numbers)
+        result = get_random_value(n, numbers)
         if result not in predictions_dict:
             predictions_dict[result] = 1
         else:
