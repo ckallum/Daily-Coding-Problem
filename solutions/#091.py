@@ -1,4 +1,5 @@
-# Function is broken because the function get's passed in the current local value of i which is fixed at 9
+# Function is broken because each new call of the function lambda get's passed in the current local value
+# of i which is fixed at 9.
 
 
 def faulty_function():
@@ -21,7 +22,6 @@ def fixed_function():
     for f in functions:
         result.append(f())
         i += 1
-
     return result
 
 
