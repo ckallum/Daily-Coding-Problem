@@ -25,7 +25,8 @@ def largest_bst(root):
 
     if left_bst or right_bst:
         if left_node.value < root.value < right_node.value:
-            return True, root, 1 + left_count + right_count
+            if left_bst and right_bst:
+                return True, root, 1 + left_count + right_count
         elif right_count > left_count:
             return False, right_node, right_count
         elif left_count > right_count:
