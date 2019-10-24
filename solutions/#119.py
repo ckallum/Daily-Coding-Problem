@@ -1,20 +1,15 @@
 def find_set(intervals):
-    start_set = []
-    end_set = []
+    intervals = sorted(intervals)
+    result = set()
     for start, end in intervals:
-        if start not in start_set and start not in end_set:
-            start_set.append(start)
-            end_set.append(end)
-        elif start in start_set and end not in end_set:
-            end_set.append(end)
-        elif start not in start_set and end in end_set:
-            start_set.append(start)
-    return set(start_set) if len(start_set) < len(end_set)else set(end_set)
+        if start not in result:
+            result.add(end)
+    return result
 
 
 def main():
     assert find_set([[0, 3], [2, 6], [3, 4], [6, 9]]) == {3, 6}
-    assert find_set([[0, 3], [2, 6], [2, 4], [2, 9]]) == {0, 2}
+    assert find_set([[0, 3], [2, 6], [1, 2], [3, 9]]) == {2, 3}
 
 
 if __name__ == '__main__':
