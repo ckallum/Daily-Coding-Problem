@@ -15,9 +15,6 @@ class Singleton:
         def __init__(self, value):
             self.instance_num = value
 
-    def __init__(self):
-        pass
-
     @classmethod
     def __initialize(cls):
         cls.instances[0] = Singleton.__Doubleton(0)
@@ -33,6 +30,7 @@ class Singleton:
 
 
 def main():
+
     i1 = Singleton.get_instance()
     assert i1.instance_num == 1
     i2 = Singleton.get_instance()
