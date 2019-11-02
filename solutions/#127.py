@@ -41,8 +41,8 @@ def main():
     n2 = Node(5)
     n2.next = Node(2)
     n2.next.next = Node(1)
-    print(add_nodes(n1, n2).to_list())
     assert add_nodes(n1, n2).to_list() == [4, 2, 2]
+    assert add_nodes(n1, n2.next).to_list() == [1, 1, 1]
 
 
 if __name__ == '__main__':
