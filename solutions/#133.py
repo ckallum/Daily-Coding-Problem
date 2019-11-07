@@ -35,3 +35,7 @@ def main():
     root.left.right.right = Node(14, root.left.right)
     assert in_order_successor(root.left.right.left).value == 12
     assert in_order_successor(root.left.right.right).value == 20
+
+
+if __name__ == '__main__':
+    main()
