@@ -4,7 +4,7 @@ def pivot(numbers, x):
     while left < right:
         if numbers[left] < x:
             left += 1
-        if numbers[left] >= x:
+        elif numbers[left] >= x:
             numbers[left], numbers[right] = numbers[right], numbers[left]
             right -= 1
 
@@ -12,17 +12,17 @@ def pivot(numbers, x):
     left += 1
     right = len(numbers) - 1
     while left < right:
-        if numbers[right] == x:
-            numbers[left], numbers[right] = numbers[right], numbers[left]
+        if numbers[left] == x:
             left += 1
         else:
+            numbers[left], numbers[right] = numbers[right], numbers[left]
             right -= 1
     print(numbers)
     return numbers
 
 
 def main():
-    assert pivot([9, 12, 3, 5, 14, 10, 10], 10) == [9, 5, 3, 10, 10, 14, 12]
+    assert pivot([9, 12, 3, 5, 14, 10, 10], 10) == [9, 5, 3, 10, 10, 12, 14]
 
 
 if __name__ == '__main__':
