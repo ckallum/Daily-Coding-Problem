@@ -4,7 +4,6 @@ def reverse_polish(equation):
                   "/": lambda x, y: x / y,
                   "-": lambda x, y: x - y,
                   "+": lambda x, y: x + y}
-    result = 0
 
     for char in equation:
         if char in operations:
