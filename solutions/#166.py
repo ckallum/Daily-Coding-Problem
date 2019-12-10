@@ -21,8 +21,7 @@ class TwoDIterator():
             self.col = 0
             self.colLen = len(self.values[self.row])
         nextValue = self.values[self.row][self.col]
-        self.col += 1
-        if self.col < self.colLen:
+        if self.col < self.colLen-1:
             self.n = True
         else:
             self.n = False
@@ -30,6 +29,7 @@ class TwoDIterator():
                 if self.values[r]:
                     self.n = True
                     break
+        self.col += 1
 
         return nextValue
 
