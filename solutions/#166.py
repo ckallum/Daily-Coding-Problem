@@ -30,7 +30,6 @@ class TwoDIterator():
                     self.n = True
                     break
         self.col += 1
-
         return nextValue
 
 
