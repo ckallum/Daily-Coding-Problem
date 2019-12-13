@@ -13,8 +13,6 @@ class ListNode:
 
 
 def sort(head):
-    if not head:
-        return None
     if not head.next:
         return head
     count = 0
@@ -44,10 +42,10 @@ def merge(l1, l2):
     temp.next = head
     while l1 and l2:
         if l1.value < l2.value:
-            head.next = ListNode(l1.value)
+            head.next = l1
             l1 = l1.next
         else:
-            head.next = ListNode(l2.value)
+            head.next = l2
             l2 = l2.next
         head = head.next
 
