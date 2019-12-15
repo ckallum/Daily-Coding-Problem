@@ -39,9 +39,9 @@ def get_busiest_slot(events):
                 max_count = count
                 start = time
         elif time in exits:
-            count -= exits[time]
-            if count == 0:
+            if count == max_count:
                 end = time
+            count -= exits[time]
 
     return start, end
 
