@@ -1,5 +1,4 @@
 from cmath import inf
-from copy import copy
 
 characters = set("abcdefghijklmnopqrstuvwxyz")
 
