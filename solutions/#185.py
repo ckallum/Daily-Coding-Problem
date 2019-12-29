@@ -19,6 +19,15 @@ def main():
         "dimensions": (4, 3)  # width, height
     }
     assert rectangle_intersection(rec1, rec2) == 6
+    rec1 = {
+        "top_left": (1, 1),
+        "dimensions": (1, 1)  # width, height
+    }
+    rec2 = {
+        "top_left": (5, 5),
+        "dimensions": (4, 3)  # width, height
+    }
+    assert rectangle_intersection(rec1, rec2) == 0
 
 
 if __name__ == '__main__':
