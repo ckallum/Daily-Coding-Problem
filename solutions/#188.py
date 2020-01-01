@@ -1,3 +1,5 @@
+# When print_i is called outside of function it only has access to value of i in global
+
 def make_functions():
     flist = []
 
