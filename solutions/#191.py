@@ -1,3 +1,11 @@
+# intution is we want to be able to start a new task as soon as possible so it doesn't matter
+# when we start the task as long as we finish as soon as possible->sort by finishing time
+# even if a task starts earlier, we won't be able to add a new task if it finishes later
+# which is why we don't want to sort/prioritise by start time.
+# i.e. if the next task is feasible to be added on the earlier start time it will also be feasible for the later start
+# time since the later start time has an earlier finish. -> added either way.
+
+
 def overlapping_intervals(intervals):
     intervals = sorted(intervals, key=lambda x: x[1])
     current = intervals[0]
