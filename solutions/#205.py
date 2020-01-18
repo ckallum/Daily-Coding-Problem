@@ -14,7 +14,7 @@ def next_lexographic_permutation(number):
     replaced_index = bisect(right, replaced)
     replacement = right[replaced_index]
     right[replaced_index] = replaced
-    return int(number[:i]+replacement+"".join(right))
+    return int(number[:i]+replacement+"".join(sorted(right)))
 
 
 
